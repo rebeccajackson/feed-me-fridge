@@ -24,7 +24,7 @@
 .col-4 { width: 33.33%;
     background-color: rgb(82, 133, 175);
     border-radius: 5px 0px 0px 5px;
-    font-family: 'Gochi Hand', cursive;
+    text-align: center;
 }
 .col-5 { width: 41.66%
 }
@@ -63,4 +63,10 @@ body{
     text-align: center;
     font-size: 30px;
     color: white
+}
+.home-link {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    font-size: 25px;
+    color: white;
 }
