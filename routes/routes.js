@@ -16,7 +16,12 @@ const router = express.Router()
 // })
 
 router.get('/',(req, res) => {
-  res.render('home')
+  
+  db.showIng()
+  .then(ing =>{
+    console.log(ing)
+    res.render('home' ,ing)
+  })
 })
 
 
