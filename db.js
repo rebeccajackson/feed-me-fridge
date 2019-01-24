@@ -13,3 +13,11 @@ module.exports = {
 // function getUser (id, db = connection) {
 //   return db('users').where('id', id).first()
 // }
+
+
+function findIng(
+
+  //get all recipes where ing match recipe
+  //need .filter
+  // return array of dishes
+){}
