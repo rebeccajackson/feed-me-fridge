@@ -9,7 +9,7 @@ router.get('/',(req, res) => {
   db.showIng()
   .then(ing =>{
     console.log(ing)
-    res.render('home' ,ing)
+    res.render('home' ,{ing})
   })
 })
 

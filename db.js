@@ -4,7 +4,6 @@ const connection = require('knex')(config)
 
 module.exports = {
   showIng,
-  findIng,
   viewDish,
   showRecipe
 
@@ -15,7 +14,8 @@ function showIng(db = connection){
 }
 
 
-function findIng(id, db = connection) {
+
+function viewDish(id, db = connection) {
   return db('ing_dish')
   .join('dishes', 'dish_id', 'ing_dish.dish_id')
   .where('ing_dish.dish_id', id)
@@ -23,8 +23,8 @@ function findIng(id, db = connection) {
 }
 
 function showRecipe(id, db = connection) {
-//when the user clicks on the link
-//you link the tables with the right id
-//select that id
+  return db('dishes')
+  .where('dishes.id', id)
+  .select()
 }
 
