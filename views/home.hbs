@@ -1,2 +1,19 @@
 
-<p>hello fridge</p>
+
+<div class = "row">
+  <div class = "col-4">
+    <div class = "title"><h1>Feed-Me Fridge</h1></div>
+    <div>
+      <img class = "fridge-logo" src="https://www.applianceservices.co.nz/sites/applianceservices.co.nz/files/refrigerator-fridge-freezer.png" width = 200>
+    </div>
+  </div>
+  <div class= "col-8">
+    <h3>What ingredient have you got?</h3>
+  <form action="/search-ingredient" method="post">
+    <label for="Name"> Ingredient: 
+    <input type="text" name="name" required>
+    </label>
+    <input type="submit" value="Feed Me!">
+  </form>
+  </div>
+</div>
