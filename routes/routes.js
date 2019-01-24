@@ -4,31 +4,19 @@ const db = require('../db')
 
 const router = express.Router()
 
-// example
-// router.get('/', (req, res) => {
-//   db.getUsers()
-//     .then(users => {
-//       res.render('index', {users: users})
-//     })
-//     .catch(err => {
-//       res.status(500).send('DATABASE ERROR: ' + err.message)
-//     })
-// })
-
 router.get('/',(req, res) => {
   
   db.showIng()
   .then(ing =>{
-    console.log(ing)
-    res.render('home' ,ing)
+    console.log({ing})
+    res.render('home', {ing})
   })
 })
 
-
-
 router.post('/search-ing', (req, res) => {
-  var ing = req.body.name
-  db.findIng(ing)
+  var id = req.body.id
+  var name = req.body.name
+  db.findIng(id, name)
   .then((result) => {
     res.redirect('/option', result)
   })
@@ -41,7 +29,7 @@ router.get('/option', (req, res) => {
   res.render('option')
 })
 
-router.post('/option', (req,res) => {
+router.post('/option/:id', (req,res) => {
    var recipe = req.body
    db.addIng(recipe)
      .then((result) => {
@@ -51,9 +39,9 @@ router.post('/option', (req,res) => {
        res.status(500).send('error')
      })
 })
-
 router.get('/view/:id', (req,res) => {
-  db.viewDish()
+  //needs id from req.body
+  db.showRecipe()
   .then(ingDish => {
     res.render('/view',id )
   })
@@ -62,7 +50,6 @@ router.get('/view/:id', (req,res) => {
   })
 })
 
-// router.get()
 
 
 module.exports = router
