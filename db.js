@@ -3,7 +3,9 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-// export the functions
+  findIng,
+  showDishes,
+  showRecipe
 }
 // rename functions and make them work for our fridge
 // function getUsers (db = connection) {
@@ -21,3 +23,11 @@ function findIng(
   //need .filter
   // return array of dishes
 ){}
+
+function showDishes(name, db = connection) {
+  return db('ing_dish')
+}
+
+function showRecipe(id, db = connection) {
+  
+}
