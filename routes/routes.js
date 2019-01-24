@@ -19,7 +19,6 @@ router.get('/',(req, res) => {
   
   db.showIng()
   .then(ing =>{
-    console.log(ing)
     res.render('home' ,{ing})
   })
 })
@@ -37,8 +36,13 @@ router.post('/search-ing', (req, res) => {
    })
 })
 
-router.get('/option', (req, res) => {
-  res.render('option')
+router.get('/option/:id', (req, res) => {
+  var id= req.params.id
+  db.viewDish(id)
+  .then(() =>{
+    console.log(id)
+    res.render('option', id)
+  })
 })
 
 router.post('/option', (req,res) => {
