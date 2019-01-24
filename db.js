@@ -14,16 +14,8 @@ function showIng(db = connection){
   return db('ing').select('id', 'name')
 }
 
-function findIng(ing, db = connection)
- 
-  //get all recipes where ing match recipe
-  //need .filter
-  // return array of dishes
 
-
-{}
-
-function viewDish(id, db = connection) {
+function findIng(id, db = connection) {
   return db('ing_dish')
   .join('dishes', 'dish_id', 'ing_dish.dish_id')
   .where('ing_dish.dish_id', id)
@@ -31,6 +23,8 @@ function viewDish(id, db = connection) {
 }
 
 function showRecipe(id, db = connection) {
-
+//when the user clicks on the link
+//you link the tables with the right id
+//select that id
 }
 

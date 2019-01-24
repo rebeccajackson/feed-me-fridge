@@ -36,7 +36,8 @@ router.post('/option', (req,res) => {
 })
 
 router.get('/view/:id', (req,res) => {
-  db.viewDish()
+  //needs id from req.body
+  db.showRecipe()
   .then(ingDish => {
     res.render('/view',id )
   })
