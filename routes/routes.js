@@ -23,7 +23,7 @@ router.get('/',(req, res) => {
 
 router.post('/serch-ing', (req, res) => {
   var newIng = req.body
-  db.finIng(newIng.id)
+  db.findIng(newIng.id)
   .then((result) => {
     res.redirect('/option')
   })
@@ -32,8 +32,12 @@ router.post('/serch-ing', (req, res) => {
    })
 })
 
+router.get('/option', (req, res) => {
+  res.render('option')
+})
+
 router.post('/option', (req,res) => {
-   var rescipe = req.body
+   var recipe = req.body
    db.addIng(rescipe)
      .then((result) => {
        res.render('/view')
@@ -53,7 +57,7 @@ router.get('/view', (req,res) => {
   })
 })
 
-router.get()
+// router.get()
 
 
 module.exports = router
