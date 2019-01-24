@@ -25,8 +25,16 @@ router.get('/home/:id', (req, res) => {
 
 // router.get('', (req,res) => {
 
-  
-// })
+router.post('/option/:id', (req,res) => {
+   var id = req.body.id
+   db.addIng(id)
+     .then((result) => {
+       res.render('/view', result)
+     })
+     .catch(err => {
+       res.status(500).send('error')
+     })
+})
 
 router.get('/view/:id', (req,res) => {
   //needs id from req.body
@@ -39,7 +47,6 @@ router.get('/view/:id', (req,res) => {
   })
 })
 
-// router.get()
 
 
 module.exports = router
