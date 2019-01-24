@@ -6,6 +6,7 @@ module.exports = {
   findIng,
   viewDish,
   showRecipe
+
 }
 
 
@@ -28,3 +29,4 @@ function viewDish(id, db = connection) {
 function showRecipe(id, db = connection) {
 
 }
+
