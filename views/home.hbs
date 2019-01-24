@@ -9,8 +9,8 @@
   </div>
   <div class= "col-8">
     <h3>What ingredient have you got?</h3>
-    
-  <form action="/search-ing" method="post">
+
+    <form action="/search-ing" method="post">
     <label for="Name"> Ingredient: </label>
     <select name="name", id = 'id' multiple>
       <option id = '1', name="chicken">chicken</option>
@@ -18,12 +18,6 @@
       <option id = '3', name="onion">onion</option>
     </select>
     <input type="submit" value="Feed Me!">
-  </form> 
-
-<ul>
-  {{#each ing}}
-  <li><a href="option/"{{id}}>{{name}}</a></li>
-  {{/each}}
-  </ul>
+    </form> 
   </div>
 </div>
