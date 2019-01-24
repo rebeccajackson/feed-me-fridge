@@ -16,7 +16,12 @@ const router = express.Router()
 // })
 
 router.get('/',(req, res) => {
-  res.render('home')
+  
+  db.showIng()
+  .then(ing =>{
+    console.log(ing)
+    res.render('home' ,ing)
+  })
 })
 
 
@@ -46,7 +51,6 @@ router.post('/option', (req,res) => {
        res.status(500).send('error')
      })
 })
-
 router.get('/view/:id', (req,res) => {
   db.viewDish()
   .then(ingDish => {
