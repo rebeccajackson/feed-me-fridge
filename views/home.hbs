@@ -10,9 +10,12 @@
   <div class= "col-8">
     <h3>What ingredient have you got?</h3>
    <form action="/search-ing" method="post">
-    <label for="Name"> Ingredient: 
-    <input type="text" name="name" required>
-    </label>
+    <label for="Name"> Ingredient: </label>
+    <select name="name", id = 'id' multiple>
+      <option id = '1', name="chicken">chicken</option>
+      <option id = '2', name="courgette">courgette</option>
+      <option id = '3', name="onion">onion</option>
+    </select>
     <input type="submit" value="Feed Me!">
   </form> 
 <ul>
