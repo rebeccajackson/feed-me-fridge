@@ -3,12 +3,16 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
+  showIng,
   findIng,
   viewDish,
   showRecipe
 
 }
 
+function showIng(db = connection){
+  return db('ing').select('id', 'name')
+}
 
 function findIng(ing, db = connection)
  
