@@ -21,11 +21,11 @@ router.get('/',(req, res) => {
 
 
 
-router.post('/serch-ing', (req, res) => {
-  var newIng = req.body
-  db.findIng(newIng.id)
+router.post('/search-ing', (req, res) => {
+  var ing = req.body.name
+  db.findIng(ing)
   .then((result) => {
-    res.redirect('/option')
+    res.redirect('/option', result)
   })
    .catch(err => {
      res.status(500).send('error')
@@ -38,7 +38,7 @@ router.get('/option', (req, res) => {
 
 router.post('/option', (req,res) => {
    var recipe = req.body
-   db.addIng(rescipe)
+   db.addIng(recipe)
      .then((result) => {
        res.render('/view')
      })
@@ -47,10 +47,10 @@ router.post('/option', (req,res) => {
      })
 })
 
-router.get('/view', (req,res) => {
+router.get('/view/:id', (req,res) => {
   db.viewDish()
   .then(ingDish => {
-    res.render('/view',Id )
+    res.render('/view',id )
   })
   .catch(err => {
     res.status(500).send('error')
