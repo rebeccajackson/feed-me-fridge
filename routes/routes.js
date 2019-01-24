@@ -19,4 +19,16 @@ router.get('/',(req, res) => {
   res.render('home')
 })
 
+router.post('/serch-ing', (req, res) => {
+  var newIng = req.body
+  db.finIng(newIng.id)
+  .then((result) => {
+    res.redirect('/option')
+  })
+   .catch(err => {
+     res.status(500).send('error')
+   })
+})
+
+
 module.exports = router
