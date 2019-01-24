@@ -27,4 +27,3 @@ function showRecipe(id, db = connection) {
   .where('dishes.id', id)
   .select()
 }
-

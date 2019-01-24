@@ -39,7 +39,6 @@ router.post('/option/:id', (req,res) => {
        res.status(500).send('error')
      })
 })
-
 router.get('/view/:id', (req,res) => {
   //needs id from req.body
   db.showRecipe()
@@ -51,7 +50,6 @@ router.get('/view/:id', (req,res) => {
   })
 })
 
-// router.get()
 
 
 module.exports = router
