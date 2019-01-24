@@ -39,9 +39,9 @@ router.post('/search-ing', (req, res) => {
 router.get('/option/:id', (req, res) => {
   var id= req.params.id
   db.viewDish(id)
-  .then(() =>{
-    console.log(id)
-    res.render('option', id)
+  .then((dish) =>{
+    console.log(dish)
+    res.render('option', {dish})
   })
 })
 
