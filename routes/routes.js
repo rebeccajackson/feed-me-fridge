@@ -8,7 +8,8 @@ router.get('/',(req, res) => {
   
   db.showIng()
   .then(ing =>{
-    res.render('home' ,{ing})
+    console.log({ing})
+    res.render('home', {ing})
   })
 })
 
@@ -24,16 +25,11 @@ router.post('/search-ing', (req, res) => {
    })
 })
 
-router.get('/option/:id', (req, res) => {
-  var id= req.params.id
-  db.viewDish(id)
-  .then((dish) =>{
-    console.log(dish)
-    res.render('option', {dish})
-  })
+router.get('/option', (req, res) => {
+  res.render('option')
 })
 
-router.post('/option', (req,res) => {
+router.post('/option/:id', (req,res) => {
    var recipe = req.body
    db.addIng(recipe)
      .then((result) => {
