@@ -6,11 +6,14 @@ module.exports = {
   showIng,
   viewDish,
   showRecipe
+
 }
 
 function showIng(db = connection){
-  return db('ing')
+  return db('ing').select('id', 'name')
 }
+
+
 
 function viewDish(id, db = connection) {
   return db('ing_dish')

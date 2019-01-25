@@ -23,6 +23,17 @@ router.get('/',(req, res) => {
   })
 })
 
+router.post('/:id', (req, res) => {
+  var id = req.body.id
+  var name = req.body.name
+  db.viewDish(id, name)
+  .then((result) => {
+    res.redirect('/option', result)
+  })
+   .catch(err => {
+     res.status(500).send('error')
+   })
+})
 
 
 router.post('/option', (req, res) => {
