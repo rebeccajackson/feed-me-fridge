@@ -9,10 +9,13 @@
   </div>
   <div class= "col-8">
     <h3>What ingredient have you got?</h3>
-<ul>
-  {{#each ing}}
-  <li><a href="home/{{id}}">{{name}}</a></li>
-  {{/each}}
-  </ul>
+    
+      <form action="/home/{{id}}" method="post">
+        {{#each ing}}
+          <input value="{{name}}"type="submit" name="{{name}}" id="{{id}}">
+          </input>
+        {{/each}}
+      </form>
+   
   </div>
-</div>
+

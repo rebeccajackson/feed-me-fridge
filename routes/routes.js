@@ -12,10 +12,13 @@ router.get('/',(req, res) => {
 })
 
 
-router.get('/home/:id', (req, res) => {
-  var id = req.body.id
+
+router.post('/home', (req, res) => {
+  var id = req.body
+  console.log('post ', id)
   db.viewDish(id)
     .then((result) => {
+      console.log(result)
       res.render('option', result)
     })
     .catch(err => {
@@ -23,11 +26,11 @@ router.get('/home/:id', (req, res) => {
     })
 })
 
-// router.get('', (req,res) => {
+
 
 router.post('/option/:id', (req,res) => {
    var id = req.body.id
-   db.addIng(id)
+   db.viewDish(id)
      .then((result) => {
        res.render('/view', result)
      })
