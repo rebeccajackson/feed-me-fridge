@@ -14,9 +14,9 @@ function showIng(db = connection){
 
 function viewDish(id, db = connection) {
   return db('ing_dish')
-  .join('dishes', 'dish_id', 'ing_dish.dish_id')
+  .join('dishes', 'dishes.dish_id', 'ing_dish.dish_id')
   .where('ing_dish.ing_id', id)
-  .select('dishes.title', 'img_url') //needs a #each dishes on handlebars
+  .select('dishes.title as title', 'dishes.img_url as img_url')
 }
 
 function showRecipe(id, db = connection) {

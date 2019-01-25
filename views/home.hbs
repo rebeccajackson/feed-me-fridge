@@ -10,12 +10,15 @@
   <div class= "col-8">
     <h3>What ingredient have you got?</h3>
     
-      <form action="/home/{{id}}" method="post">
-        {{#each ing}}
-          <input value="{{name}}"type="submit" name="{{name}}" id="{{id}}">
-          </input>
+    <form action="/home" method="post"> 
+      <select name="id" multiple>
+        {{#each ing}} 
+        <option value="{{id}}">{{name}}</option>
         {{/each}}
-      </form>
-   
+      </select>
+
+      <input type="submit" value="Feed Me!">
+      
+    </form>
   </div>
 

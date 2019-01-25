@@ -14,12 +14,12 @@ router.get('/',(req, res) => {
 
 
 router.post('/home', (req, res) => {
-  var id = req.body
+  var id = req.body.id
   console.log('post ', id)
   db.viewDish(id)
-    .then((result) => {
-      console.log(result)
-      res.render('option', result)
+    .then(options => {
+      console.log({options})
+      res.render('option', {options})
     })
     .catch(err => {
       res.status(500).send('error')
