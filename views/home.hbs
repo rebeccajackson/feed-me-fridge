@@ -8,12 +8,12 @@
     </div>
   </div>
   <div class= "col-8">
-    <h3>What ingredient have you got?</h3>
+    <h3>What ingredients have you got?</h3>
     
     <form action="/option" method="post"> 
       <select name="id" multiple>
         {{#each ing}} 
-        <option value="{{id}}">{{name}}</option>
+        <p>Ingredients: <option value="{{id}}">{{name}}</option></p>
         {{/each}}
       </select>
 

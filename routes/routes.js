@@ -9,7 +9,8 @@ router.get('/option/:id', (req,res) => {
   console.log('params ', id)
   db.showRecipe(id)
     .then((result) => {
-      res.render('view', result)
+      console.log(result)
+      res.render('view', {result})
     })
     .catch(err => {
       res.status(500).send('error')
@@ -23,21 +24,10 @@ router.get('/',(req, res) => {
   })
 })
 
-router.post('/:id', (req, res) => {
-  var id = req.body.id
-  var name = req.body.name
-  db.viewDish(id, name)
-  .then((result) => {
-    res.redirect('/option', result)
-  })
-   .catch(err => {
-     res.status(500).send('error')
-   })
-})
-
 
 router.post('/option', (req, res) => {
   var id = req.body.id
+  console.log(req.body)
   db.viewDish(id)
     .then(options => {
       console.log(options)
