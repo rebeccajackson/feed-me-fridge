@@ -10,7 +10,7 @@ module.exports = {
 }
 
 function showIng(db = connection){
-  return db('ing').select('id', 'name')
+  return db('ing')
 }
 
 
@@ -18,7 +18,7 @@ function showIng(db = connection){
 function viewDish(id, db = connection) {
   return db('ing_dish')
   .join('dishes', 'dish_id', 'ing_dish.dish_id')
-  .where('ing_dish.dish_id', id)
+  .where('ing_dish.ing_id', id)
   .select('dishes.title', 'img_url') //needs a #each dishes on handlebars
 }
 
