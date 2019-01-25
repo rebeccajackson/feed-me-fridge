@@ -10,6 +10,7 @@ router.get('/',(req, res) => {
     res.render('home', {ing})
   })
 })
+ 
 
 
 router.get('/home/:id', (req, res) => {
