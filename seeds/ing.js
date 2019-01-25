@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('ing').insert([
         {id: 1, name: 'chicken'},
         {id: 2, name: 'courgette'},
-        {id: 3, name: 'onion'}
+        {id: 3, name: 'ocourgett'}
       ]);
     });
 };
