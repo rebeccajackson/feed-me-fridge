@@ -5,10 +5,8 @@ const db = require('../db')
 const router = express.Router()
 
 router.get('/',(req, res) => {
-  
   db.showIng()
   .then(ing =>{
-    console.log({ing})
     res.render('home', {ing})
   })
 })
@@ -25,20 +23,33 @@ router.post('/:id', (req, res) => {
    })
 })
 
-router.get('/option', (req, res) => {
-  res.render('option')
+
+router.post('/home', (req, res) => {
+  var id = req.body
+  console.log('post ', id)
+  db.viewDish(id)
+    .then((result) => {
+      console.log(result)
+      res.render('option', result)
+    })
+    .catch(err => {
+      res.status(500).send('error')
+    })
 })
 
+
+
 router.post('/option/:id', (req,res) => {
-   var recipe = req.body
-   db.addIng(recipe)
+   var id = req.body.id
+   db.viewDish(id)
      .then((result) => {
-       res.render('/view')
+       res.render('/view', result)
      })
      .catch(err => {
        res.status(500).send('error')
      })
 })
+
 router.get('/view/:id', (req,res) => {
   //needs id from req.body
   db.showRecipe()
