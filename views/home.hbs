@@ -9,17 +9,16 @@
   </div>
   <div class= "col-8">
     <h3>What ingredient have you got?</h3>
+    
+    <form action="/option" method="post"> 
+      <select name="id" multiple>
+        {{#each ing}} 
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+      </select>
 
-    <form action="/home" method="post">
-    <label for="Name"> Ingredient: </label>
-    <select name="ingredient" multiple>
-      {{#each ing}}
-      <option value = "{{id}}">{{name}}</option>
-      {{/each}}
-    </select>
-    <input type="submit" value="Feed Me!">
-    </form> 
-
-
+      <input type="submit" value="Feed Me!">
+      
+    </form>
   </div>
 
