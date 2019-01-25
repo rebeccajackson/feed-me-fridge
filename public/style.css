@@ -70,6 +70,15 @@ body{
     font-size: 25px;
     color: white;
 }
+
+.dish-image {
+    border-radius: 50%
+}
+.dish-title{
+    color: inherit;
+    font-size: 30px;
+    text-decoration: none
+
 .col-8 select {
     vertical-align: top;
     background-color: rgb(130, 158, 182);
@@ -81,4 +90,5 @@ body{
     font-size: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
     outline: none
+
 }
