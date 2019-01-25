@@ -13,10 +13,10 @@ router.get('/',(req, res) => {
   })
 })
 
-router.post('/search-ing', (req, res) => {
+router.post('/:id', (req, res) => {
   var id = req.body.id
   var name = req.body.name
-  db.findIng(id, name)
+  db.viewDish(id, name)
   .then((result) => {
     res.redirect('/option', result)
   })

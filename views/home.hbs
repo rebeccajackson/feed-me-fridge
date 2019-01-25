@@ -12,10 +12,10 @@
 
     <form action="/search-ing" method="post">
     <label for="Name"> Ingredient: </label>
-    <select name="name", id = 'id' multiple>
-      <option id = '1', name="chicken">chicken</option>
-      <option id = '2', name="courgette">courgette</option>
-      <option id = '3', name="onion">onion</option>
+    <select name="ingredient" multiple>
+      {{#each ing}}
+      <option value = "{{id}}">{{name}}</option>
+      {{/each}}
     </select>
     <input type="submit" value="Feed Me!">
     </form> 
