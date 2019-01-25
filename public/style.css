@@ -70,3 +70,6 @@ body{
     font-size: 25px;
     color: white;
 }
+.dish-image {
+    border-radius: 50%
+}
