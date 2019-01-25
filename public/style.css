@@ -73,3 +73,8 @@ body{
 .dish-image {
     border-radius: 50%
 }
+.dish-title{
+    color: inherit;
+    font-size: 30px;
+    text-decoration: none
+}
