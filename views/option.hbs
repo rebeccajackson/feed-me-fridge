@@ -11,11 +11,15 @@
   </div>
 
   <div class= "col-8">
-   {{#each dishes }}
 
-    Titile: {{title}}
-    
-   {{/each}}
+    {{#each options}}
+      <div>
+        <a href="/option/{{id}}"><img class = "dish-image" src="/images/{{img_url}}" alt = "image of {{title}}" width = 120></a>
+      </div>
+        
+    {{/each}}
+
+
 
     
   </p>
