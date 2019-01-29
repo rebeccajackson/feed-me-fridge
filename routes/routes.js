@@ -10,7 +10,7 @@ router.get('/option/:id', (req,res) => {
   db.showRecipe(id)
     .then((result) => {
       console.log(result)
-      res.render('view', {result})
+      res.render('view', {...result[0]})
     })
     .catch(err => {
       res.status(500).send('error')
