@@ -1,7 +1,6 @@
-# Boilerplate: Knex.js
+# Feed me fridge - 1-Day Group project
 
-Phase 1 boilerplate project with:
-
+## Boilerplate project with:
  - Express
  - Knex
  - SQLite3
@@ -10,15 +9,19 @@ Phase 1 boilerplate project with:
  - Jest
  - nodemon
 
+## Team members
+- sam-n-b
+- alex-h-k
+- mijucho
+- rebeccajackson
+- EDA staff created the boilerplate
 
-## Install
+## Overview/Reflection
+This focus for this project was to allow all team members to grow their skill in an area of weakness.  With that in mind, I found this project to be a huge success. 
 
-```
-yarn
-yarn knex migrate:latest
-yarn knex seed:run
-yarn dev
-```
+The user-stories for this project were:
+- a user can select an ingredient in their fridge and will be shown a list of recipies based on that ingredient
+- a user can select a recipe from that list and get taken to a page showing that recipe
+- a user can navigate back to the homepage
 
-Be sure to check out the other npm scripts too.
 
