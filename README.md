@@ -1,4 +1,6 @@
-# Feed me fridge - 1-Day Group project
+# Feed me fridge
+
+A 1-Day Group project
 
 ## Boilerplate project with:
  - Express
